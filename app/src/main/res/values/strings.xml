@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">recipe-tracker</string>
+    <string name="recipes">Recipes</string>
+    <string name="back_button">Back Button</string>
+    <string name="filters_buttons">Filters Buttons</string>
+    <string name="recipe_search">Find a recipe</string>
+    <string name="search_button">Search Button</string>
+    <string name="refresh_button">Refresh Button</string>
+    <string name="refresh">Refresh</string>
+    <string name="recipe_image">Recipe Image</string>
 </resources>
