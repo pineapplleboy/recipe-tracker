@@ -30,5 +30,6 @@ class RecipesViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
             .into(moviePoster)
 
         name.text = recipe.title
+        info.text = "${recipe.readyInMinutes} min • ${recipe.aggregateLikes}"
     }
 }

@@ -44,6 +44,8 @@ class RecipesActivity : AppCompatActivity() {
             Log.d("PISKA", it.toString())
         }
 
-        vm.getRandomRecipes()
+        binding.refreshBar.setOnClickListener {
+            vm.getRandomRecipes()
+        }
     }
 }
