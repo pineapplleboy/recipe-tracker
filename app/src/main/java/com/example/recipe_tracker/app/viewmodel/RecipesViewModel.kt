@@ -1,7 +1,6 @@
 package com.example.recipe_tracker.app.viewmodel
 
 import Recipe
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -31,9 +30,6 @@ class RecipesViewModel(
 
             result.onSuccess {
                 recipesMutable.value = it
-            }
-            result.onFailure {
-                Log.d("PISKA", it.message.toString())
             }
         }
     }

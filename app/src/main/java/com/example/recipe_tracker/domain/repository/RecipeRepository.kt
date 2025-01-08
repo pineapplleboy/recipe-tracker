@@ -8,4 +8,8 @@ interface RecipeRepository {
         tags: String,
         number: Int
     ): Result<List<Recipe>>
+
+    suspend fun getRecipeById(
+        id: Int
+    ): Result<Recipe>
 }

@@ -23,6 +23,15 @@ class RecipeRepositoryImpl(
             }
         )
     }
+
+    override suspend fun getRecipeById(
+        id: Int
+    ): Result<Recipe> {
+        return safeApiCall(
+            apiCall = { api.getRecipeById(id) },
+            transform = { it.toDomainModel() }
+        )
+    }
 }
 
 fun RecipeDTO.toDomainModel(): Recipe {

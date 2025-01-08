@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Recipetracker"
         tools:targetApi="31">
         <activity
+            android:name=".app.activity.RecipeActivity"
+            android:exported="false" />
+        <activity
             android:name=".app.activity.RecipesActivity"
             android:exported="true">
             <intent-filter>

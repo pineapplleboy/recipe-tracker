@@ -8,4 +8,5 @@
     <string name="refresh_button">Refresh Button</string>
     <string name="refresh">Refresh</string>
     <string name="recipe_image">Recipe Image</string>
+    <string name="bar">Bar</string>
 </resources>

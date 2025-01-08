@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.activity.RecipeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/back_button"
+                android:paddingStart="0dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="12dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_left" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/epilogue"
+                android:gravity="center"
+                android:textColor="@color/dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Delicious Spaghetti"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/head">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/recipeImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/recipe_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/recipe_preview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/BottomRoundedImageView" />
+
+        <LinearLayout
+            android:id="@+id/firstInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeImage">
+
+            <TextView
+                android:id="@+id/cookingTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/epilogue"
+                android:textColor="@color/dark"
+                android:textSize="18sp"
+                tools:text="Ready in 25 minutes" />
+
+            <TextView
+                android:id="@+id/servings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/epilogue"
+                android:gravity="end"
+                android:textColor="@color/dark"
+                android:textSize="18sp"
+                tools:text="Servings: 4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/firstInfo">
+
+            <LinearLayout
+                android:id="@+id/healthScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/rounded_shape_16">
+
+                <TextView
+                    android:id="@+id/healthScoreText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/epilogue"
+                    android:textColor="@color/dark"
+                    android:textSize="12sp"
+                    tools:text="HealthScore: 85%" />
+
+                <ImageView
+                    android:id="@+id/healthScoreBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:src="@drawable/rounded_shape_12"
+                    android:contentDescription="@string/bar"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/spoonacularScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/rounded_shape_16">
+
+                <TextView
+                    android:id="@+id/spoonacularScoreText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/epilogue"
+                    android:textColor="@color/dark"
+                    android:textSize="12sp"
+                    tools:text="spoonacularScore: 90" />
+
+                <ImageView
+                    android:id="@+id/spoonacularScoreBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:src="@drawable/rounded_shape_12"
+                    android:contentDescription="@string/bar"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

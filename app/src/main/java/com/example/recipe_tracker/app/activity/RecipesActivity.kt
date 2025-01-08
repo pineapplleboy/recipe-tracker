@@ -41,7 +41,6 @@ class RecipesActivity : AppCompatActivity() {
 
         vm.recipes.observe(this) {
             (binding.recipesRecyclerView.adapter as RecipeListAdapter).submitList(it)
-            Log.d("PISKA", it.toString())
         }
 
         binding.refreshBar.setOnClickListener {
