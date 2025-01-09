@@ -1,7 +1,5 @@
 package com.example.recipe_tracker.data.model
 
-import com.example.recipe_tracker.domain.model.Ingredient
-
 class RecipeDTO(
     val id: Int,
     val title: String,
@@ -37,7 +35,7 @@ class RecipeDTO(
     val whole30: Boolean,
     val weightWatcherSmartPoints: Int,
     val dishTypes: List<String>,
-//    val extendedIngredients: List<Ingredient>,
+    val extendedIngredients: List<IngredientDTO>,
     val summary: String?,
     val winePairing: WinePairing?
 ) {

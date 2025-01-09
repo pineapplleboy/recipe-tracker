@@ -6,24 +6,27 @@
         android:fontWeight="400"
         android:font="@font/epilogue_regular" />
     <font
-        android:fontStyle="italic"
-        android:fontWeight="400"
-        android:font="@font/epilogue_italic" />
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        android:font="@font/epilogue_medium" />
     <font
         android:fontStyle="normal"
         android:fontWeight="700"
         android:font="@font/epilogue_bold" />
-    <font
-        android:fontStyle="italic"
-        android:fontWeight="700"
-        android:font="@font/epilogue_bold_italic" />
     <font
         android:fontStyle="normal"
         android:fontWeight="800"
         android:font="@font/epilogue_extra_bold" />
     <font
         android:fontStyle="italic"
+        android:fontWeight="400"
+        android:font="@font/epilogue_italic" />
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="700"
+        android:font="@font/epilogue_bold_italic" />
+    <font
+        android:fontStyle="italic"
         android:fontWeight="800"
         android:font="@font/epilogue_extra_bold_italic" />
-
 </font-family>
