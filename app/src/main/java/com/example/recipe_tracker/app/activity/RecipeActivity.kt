@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.recipe_tracker.R
 import com.example.recipe_tracker.app.adapter.IngredientAdapter
+import com.example.recipe_tracker.app.adapter.StepListAdapter
 import com.example.recipe_tracker.app.viewmodel.RecipeViewModel
 import com.example.recipe_tracker.databinding.ActivityRecipeBinding
+import com.example.recipe_tracker.domain.model.Step
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RecipeActivity : AppCompatActivity() {
@@ -44,6 +46,13 @@ class RecipeActivity : AppCompatActivity() {
             adapter = ingredientAdapter
         }
 
+        val stepAdapter = StepListAdapter()
+        binding.stepsRecyclerView.apply {
+
+            layoutManager = GridLayoutManager(this.context, 1)
+            adapter = stepAdapter
+        }
+
         vm.recipe.observe(this) {
             binding.name.text = it.title
 
@@ -57,6 +66,7 @@ class RecipeActivity : AppCompatActivity() {
             binding.spoonacularScoreText.text = "SpoonacularScore: ${it.spoonacularScore}"
 
             (binding.ingredientsRecyclerView.adapter as IngredientAdapter).submitList(it.extendedIngredients)
+//            (binding.stepsRecyclerView.adapter as StepListAdapter).submitList(it.analyzedInstructions.mapIndexed { index, text -> Step(id = index, text = text) })
 
             changeBar(it.spoonacularScore, binding.spoonacularScoreBar)
             changeBar(it.healthScore.toDouble(), binding.healthScoreBar)
