@@ -1,5 +1,8 @@
+import com.example.recipe_tracker.data.model.InstructionDTO
 import com.example.recipe_tracker.data.model.RecipeDTO
+import com.example.recipe_tracker.domain.model.AnalyzedInstructions
 import com.example.recipe_tracker.domain.model.Ingredient
+import com.example.recipe_tracker.domain.model.Instruction
 
 class Recipe(
     val id: Int,
@@ -16,7 +19,7 @@ class Recipe(
     val healthScore: Int,
     val spoonacularScore: Double,
     val pricePerServing: Double,
-//    val analyzedInstructions: List<String>,
+    val analyzedInstructions: List<Instruction>,
     val cheap: Boolean,
     val creditsText: String?,
     val cuisines: List<String>,

@@ -31,6 +31,7 @@ class RecipesViewModel(
 
             result.onSuccess {
                 recipesMutable.value = it
+                Log.d("PISKA", it.toString())
             }
 
             result.onFailure {

@@ -15,7 +15,7 @@ class RecipeDTO(
     val healthScore: Int,
     val spoonacularScore: Double,
     val pricePerServing: Double,
-//    val analyzedInstructions: List<String>,
+    val analyzedInstructions: List<InstructionDTO>,
     val cheap: Boolean,
     val creditsText: String?,
     val cuisines: List<String>,

@@ -8,13 +8,13 @@ import com.example.recipe_tracker.domain.model.Step
 class StepViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = StepCardBinding.bind(view)
-    private var id: Int? = null
+    private var number: Int? = null
 
     fun bind(step: Step) = with(binding) {
 
-        id = step.id
+        number = step.number
 
-        stepNum.text = "Step ${id}"
-        stepText.text = step.text
+        stepNum.text = "Step ${number}"
+        stepText.text = step.step
     }
 }

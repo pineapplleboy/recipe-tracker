@@ -14,7 +14,6 @@ import com.example.recipe_tracker.app.adapter.IngredientAdapter
 import com.example.recipe_tracker.app.adapter.StepListAdapter
 import com.example.recipe_tracker.app.viewmodel.RecipeViewModel
 import com.example.recipe_tracker.databinding.ActivityRecipeBinding
-import com.example.recipe_tracker.domain.model.Step
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RecipeActivity : AppCompatActivity() {
@@ -66,7 +65,7 @@ class RecipeActivity : AppCompatActivity() {
             binding.spoonacularScoreText.text = "SpoonacularScore: ${it.spoonacularScore}"
 
             (binding.ingredientsRecyclerView.adapter as IngredientAdapter).submitList(it.extendedIngredients)
-//            (binding.stepsRecyclerView.adapter as StepListAdapter).submitList(it.analyzedInstructions.mapIndexed { index, text -> Step(id = index, text = text) })
+            (binding.stepsRecyclerView.adapter as StepListAdapter).submitList(it.analyzedInstructions[0].steps)
 
             changeBar(it.spoonacularScore, binding.spoonacularScoreBar)
             changeBar(it.healthScore.toDouble(), binding.healthScoreBar)

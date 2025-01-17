@@ -5,15 +5,21 @@ import com.example.recipe_tracker.data.api.SpoonacularAPI
 import com.example.recipe_tracker.data.repository.RecipeRepositoryImpl
 import com.example.recipe_tracker.domain.repository.RecipeRepository
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
+val logging = HttpLoggingInterceptor().apply {
+    level = HttpLoggingInterceptor.Level.BODY
+}
 
 val dataModule = module {
     single {
         val apiKey = "85efce459d6d4800ab6d3c084e74b014"
         val client = OkHttpClient.Builder()
             .addInterceptor(AuthorizationInterceptor(apiKey))
+            .addInterceptor(logging)
             .build()
 
         Retrofit.Builder()

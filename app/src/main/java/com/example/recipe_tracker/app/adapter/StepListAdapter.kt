@@ -14,7 +14,7 @@ class StepListAdapter : ListAdapter<Step, StepViewHolder>(DIFF) {
     private companion object {
         val DIFF = object : DiffUtil.ItemCallback<Step>() {
             override fun areItemsTheSame(oldItem: Step, newItem: Step): Boolean {
-                return oldItem.id == newItem.id
+                return oldItem.number == newItem.number
             }
 
             @SuppressLint("DiffUtilEquals")
